@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    depends_on:
+      - mongo
+    ports:
+      - "9876:9876"
+    volumes:
+      - .:/usr/src/
+    command: bash -c 'yarn start'

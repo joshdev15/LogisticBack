@@ -1,0 +1,54 @@
+version: "3.8"
+
+services:
+  app:
+    image: joshdev15/logisticback
+    # depends_on:
+    # - mongo
+    ports:
+      - "9876:9876"
+    # environment:
+    # - MONGO_URI=mongodb://mongo:27017/dbname
+    # - MONGO_USER=admin
+    # - MONGO_PASS=password
+    command: bash -c 'yarn start'
+    networks:
+      app_net:
+        ipv4_address: 172.16.238.4
+
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    networks:
+      app_net:
+        ipv4_address: 172.16.238.3
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mongo
+    environment:
+      - ME_CONFIG_BASICAUTH_USERNAME=root
+      - ME_CONFIG_BASICAUTH_PASSWORD=root
+      - ME_CONFIG_MONGODB_PORT=27017
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=root
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=root
+    links:
+      - mongo
+    networks:
+      app_net:
+        ipv4_address: 172.16.238.2
+
+networks:
+  app_net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.238.0/24
+          gateway: 172.16.238.1
