@@ -22,6 +22,7 @@ const setInitialData = async () => {
       name: "Proof Shipment",
       owner: "System",
       cost: 100,
+      author: "me",
       location: {
         lat: 4.711863,
         lng: -74.0739219,
