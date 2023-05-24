@@ -2,12 +2,16 @@ import mongoose from "mongoose";
 
 const { Schema } = mongoose;
 
-const ShipmentSchema = Schema({
+const ShipmentSchema = new Schema({
   name: String,
   author: String,
   owner: String,
   cost: Number,
   location: {
+    lat: Number,
+    lng: Number,
+  },
+  destination: {
     lat: Number,
     lng: Number,
   },
@@ -18,6 +22,6 @@ const ShipmentSchema = Schema({
   id: String,
 });
 
-const Shipment = mongoose.model("Shipment", ShipmentSchema);
+const Shipment = mongoose.model("shipment", ShipmentSchema);
 
 export default Shipment;
