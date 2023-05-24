@@ -33,7 +33,7 @@ credenciales:
 ### Tercero
 
 Una vez ingrese los datos será redireccionado a una interfaz grafica
-de mongodb, en ella debe crear una base de datos llamada "logistic"
-y dentro de ella una collección llamada "shipments".
+de mongodb, en ella debe crear una base de datos llamada "logisticapp"
+y dentro de ella una collección llamada "shipments" y otra llamada "users".
 
 Una vez hecho esto ya podrá hacer uso de la aplicación de forma optima.
