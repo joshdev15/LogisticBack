@@ -21,7 +21,7 @@ const setInitialData = async () => {
       id: btoa("Proof Shipment-System"),
       name: "Proof Shipment",
       owner: "System",
-      const: 0,
+      cost: 100,
       location: {
         lat: 4.711863,
         lng: -74.0739219,
