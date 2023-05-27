@@ -7,6 +7,10 @@ const ShipmentSchema = new Schema({
   author: String,
   owner: String,
   cost: Number,
+  origin: {
+    lat: Number,
+    lng: Number,
+  },
   location: {
     lat: Number,
     lng: Number,
