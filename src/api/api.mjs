@@ -73,13 +73,11 @@ app.get(`/${basePath}/fakeauth`, async (req, res) => {
 
   const admin = await Users.findOne({ user: user.name });
   if (admin === null) {
-    res.set("WWW-Authenticate", 'Basic realm="Authorization Required"');
     res.sendStatus(403);
     return;
   }
 
   if (admin.password !== user.pass) {
-    res.set("WWW-Authenticate", 'Basic realm="Authorization Required"');
     res.sendStatus(403);
     return;
   }
