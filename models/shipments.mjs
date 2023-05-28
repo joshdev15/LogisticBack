@@ -7,18 +7,13 @@ const ShipmentSchema = new Schema({
   author: String,
   owner: String,
   cost: Number,
-  origin: {
-    lat: Number,
-    lng: Number,
-  },
-  location: {
-    lat: Number,
-    lng: Number,
-  },
-  destination: {
-    lat: Number,
-    lng: Number,
-  },
+  ride: [
+    {
+      name: String,
+      latitude: Number,
+      longitude: Number,
+    },
+  ],
   status: {
     type: String,
     enum: ["ordered", "packaging", "way", "arrived", "delivered"],

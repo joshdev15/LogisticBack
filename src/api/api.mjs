@@ -23,18 +23,23 @@ const setInitialData = async () => {
       owner: "System",
       cost: 100,
       author: "me",
-      origin: {
-        lat: 4.711863,
-        lng: -74.0739219,
-      },
-      location: {
-        lat: 4.707374,
-        lng: -74.056108,
-      },
-      destination: {
-        lat: 4.702429,
-        lng: -74.0440309,
-      },
+      ride: [
+        {
+          name: "origin",
+          latitude: 4.711863,
+          longitude: -74.0739219,
+        },
+        {
+          name: "location",
+          latitude: 4.707374,
+          longitude: -74.056108,
+        },
+        {
+          name: "destination",
+          latitude: 4.702429,
+          longitude: -74.0440309,
+        },
+      ],
       status: "ordered",
     });
 
